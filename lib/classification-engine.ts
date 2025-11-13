@@ -3,31 +3,31 @@
  * Maps sequence features to Gene Ontology categories
  */
 
-import type { extractEmbeddingFeatures } from "./esm2-embeddings"
+import type { extractEmbeddingFeatures } from "./esm2-embeddings";
 
 export interface FunctionalCategory {
-  id: string
-  name: string
-  type: "molecular_function" | "biological_process" | "cellular_component"
-  confidence: number
-  description: string
-  examples: string[]
+  id: string;
+  name: string;
+  type: "molecular_function" | "biological_process" | "cellular_component";
+  confidence: number;
+  description: string;
+  examples: string[];
   references: {
-    geneOntology: string
-    uniProt?: string
-  }
-  embeddingBased?: boolean
+    geneOntology: string;
+    uniProt?: string;
+  };
+  embeddingBased?: boolean;
 }
 
 export interface ClassificationResult {
-  sequence: string
-  sequenceId: string
-  length: number
-  primaryFunctions: FunctionalCategory[]
-  secondaryFunctions: FunctionalCategory[]
-  confidence: number
-  notes: string[]
-  embeddingFeatures?: ReturnType<typeof extractEmbeddingFeatures>
+  sequence: string;
+  sequenceId: string;
+  length: number;
+  primaryFunctions: FunctionalCategory[];
+  secondaryFunctions: FunctionalCategory[];
+  confidence: number;
+  notes: string[];
+  embeddingFeatures?: ReturnType<typeof extractEmbeddingFeatures>;
 }
 
 /**
@@ -37,9 +37,9 @@ export interface ClassificationResult {
 export function classifyProtein(
   sequence: string,
   stats: ReturnType<typeof import("./protein-api").getSequenceStats>,
-  sequenceId: string,
+  sequenceId: string
 ): ClassificationResult {
-  return classifyProteinWithEmbeddings(sequence, stats, sequenceId)
+  return classifyProteinWithEmbeddings(sequence, stats, sequenceId);
 }
 
 /**
@@ -49,49 +49,53 @@ export function classifyProteinWithEmbeddings(
   sequence: string,
   stats: ReturnType<typeof import("./protein-api").getSequenceStats>,
   sequenceId: string,
-  embeddingFeatures?: ReturnType<typeof extractEmbeddingFeatures>,
+  embeddingFeatures?: ReturnType<typeof extractEmbeddingFeatures>
 ): ClassificationResult {
-  const primaryFunctions: FunctionalCategory[] = []
-  const secondaryFunctions: FunctionalCategory[] = []
+  const primaryFunctions: FunctionalCategory[] = [];
+  const secondaryFunctions: FunctionalCategory[] = [];
 
   // Hydrophobic-rich proteins: membrane proteins, lipid binding
   if (stats.hydrophobicity > 45) {
-    const confidence = 0.75 + (stats.hydrophobicity - 45) * 0.005
+    const confidence = 0.75 + (stats.hydrophobicity - 45) * 0.005;
     // Boost confidence if embedding suggests structured membrane protein
     const boostedConfidence =
-      embeddingFeatures && embeddingFeatures.complexity > 0.5 ? Math.min(confidence + 0.1, 0.95) : confidence
+      embeddingFeatures && embeddingFeatures.complexity > 0.5
+        ? Math.min(confidence + 0.1, 0.95)
+        : confidence;
 
     primaryFunctions.push({
       id: "GO:0005215",
       name: "Transporter Activity",
       type: "molecular_function",
       confidence: boostedConfidence,
-      description: "Enables the directed movement of substances across membranes or cellular components.",
+      description:
+        "Enables the directed movement of substances across membranes or cellular components.",
       examples: ["Ion channels", "Aquaporins", "Transporters"],
       references: {
         geneOntology: "GO:0005215",
         uniProt: "TRANSMEM",
       },
       embeddingBased: embeddingFeatures ? true : false,
-    })
+    });
 
     secondaryFunctions.push({
       id: "GO:0031224",
       name: "Intrinsic Component of Membrane",
       type: "cellular_component",
       confidence: 0.68,
-      description: "Proteins with strong hydrophobic character often localize to membranes.",
+      description:
+        "Proteins with strong hydrophobic character often localize to membranes.",
       examples: ["GPCRs", "Tight junction proteins", "Adhesion molecules"],
       references: {
         geneOntology: "GO:0031224",
       },
-    })
+    });
   }
 
   // Highly charged proteins: DNA/RNA binding, enzymatic activity
   if (Math.abs(stats.netCharge) > 15) {
     // Embedding complexity as indicator of functional regions
-    const chargeConfidence = 0.7 + (embeddingFeatures?.complexity || 0) * 0.15
+    const chargeConfidence = 0.7 + (embeddingFeatures?.complexity || 0) * 0.15;
 
     primaryFunctions.push({
       id: "GO:0003677",
@@ -105,7 +109,7 @@ export function classifyProteinWithEmbeddings(
         uniProt: "DNA_BIND",
       },
       embeddingBased: embeddingFeatures ? true : false,
-    })
+    });
 
     primaryFunctions.push({
       id: "GO:0003723",
@@ -118,7 +122,7 @@ export function classifyProteinWithEmbeddings(
         geneOntology: "GO:0003723",
         uniProt: "RNA_BIND",
       },
-    })
+    });
   }
 
   // Enzyme-like characteristics
@@ -128,13 +132,14 @@ export function classifyProteinWithEmbeddings(
       name: "Transferase Activity",
       type: "molecular_function",
       confidence: 0.62,
-      description: "Catalyzes the transfer of a group from one compound to another.",
+      description:
+        "Catalyzes the transfer of a group from one compound to another.",
       examples: ["Kinases", "Phosphatases", "Methyltransferases"],
       references: {
         geneOntology: "GO:0016740",
         uniProt: "TRANSFERASE",
       },
-    })
+    });
   }
 
   // Proline-rich proteins: signal transduction, structural
@@ -149,7 +154,7 @@ export function classifyProteinWithEmbeddings(
       references: {
         geneOntology: "GO:0004871",
       },
-    })
+    });
   }
 
   // Cysteine-rich: structural proteins, redox activity
@@ -164,7 +169,7 @@ export function classifyProteinWithEmbeddings(
       references: {
         geneOntology: "GO:0015035",
       },
-    })
+    });
 
     secondaryFunctions.push({
       id: "GO:0005200",
@@ -176,7 +181,7 @@ export function classifyProteinWithEmbeddings(
       references: {
         geneOntology: "GO:0005200",
       },
-    })
+    });
   }
 
   // Cell signaling / metabolic processes
@@ -191,7 +196,7 @@ export function classifyProteinWithEmbeddings(
       references: {
         geneOntology: "GO:0008152",
       },
-    })
+    });
   }
 
   // General cellular localization
@@ -205,41 +210,58 @@ export function classifyProteinWithEmbeddings(
     references: {
       geneOntology: "GO:0005623",
     },
-  })
+  });
 
   // Sort by confidence and filter
   const allFunctions = [...primaryFunctions, ...secondaryFunctions]
     .sort((a, b) => b.confidence - a.confidence)
-    .slice(0, 8)
+    .slice(0, 8);
 
   // Split back into primary and secondary
-  const sortedPrimary = allFunctions.filter((f) => primaryFunctions.includes(f))
-  const sortedSecondary = allFunctions.filter((f) => secondaryFunctions.includes(f))
+  const sortedPrimary = allFunctions.filter((f) =>
+    primaryFunctions.includes(f)
+  );
+  const sortedSecondary = allFunctions.filter((f) =>
+    secondaryFunctions.includes(f)
+  );
 
   const overallConfidence =
-    sortedPrimary.length > 0 ? sortedPrimary.reduce((sum, f) => sum + f.confidence, 0) / sortedPrimary.length : 0.5
+    sortedPrimary.length > 0
+      ? sortedPrimary.reduce((sum, f) => sum + f.confidence, 0) /
+        sortedPrimary.length
+      : 0.5;
 
-  const notes: string[] = []
+  const notes: string[] = [];
   if (stats.hydrophobicity > 45) {
-    notes.push(`High hydrophobicity (${stats.hydrophobicity.toFixed(1)}%) suggests membrane association`)
+    notes.push(
+      `High hydrophobicity (${stats.hydrophobicity.toFixed(
+        1
+      )}%) suggests membrane association`
+    );
   }
   if (Math.abs(stats.netCharge) > 15) {
     notes.push(
-      `High net charge (${stats.netCharge > 0 ? "+" : ""}${stats.netCharge.toFixed(1)}) suggests nucleic acid binding`,
-    )
+      `High net charge (${
+        stats.netCharge > 0 ? "+" : ""
+      }${stats.netCharge.toFixed(1)}) suggests nucleic acid binding`
+    );
   }
   if (stats.length < 50) {
-    notes.push("Short sequence detected - may be a peptide or domain")
+    notes.push("Short sequence detected - may be a peptide or domain");
   }
   // Add embedding-based insights
   if (embeddingFeatures) {
     if (embeddingFeatures.complexity > 0.7) {
       notes.push(
-        `Complex structural patterns detected in embedding (score: ${embeddingFeatures.complexity.toFixed(2)})`,
-      )
+        `Complex structural patterns detected in embedding (score: ${embeddingFeatures.complexity.toFixed(
+          2
+        )})`
+      );
     }
     if (embeddingFeatures.dynamicRange > 1.5) {
-      notes.push("Diverse functional regions predicted based on embedding analysis")
+      notes.push(
+        "Diverse functional regions predicted based on embedding analysis"
+      );
     }
   }
 
@@ -252,5 +274,5 @@ export function classifyProteinWithEmbeddings(
     confidence: overallConfidence,
     notes,
     embeddingFeatures,
-  }
+  };
 }

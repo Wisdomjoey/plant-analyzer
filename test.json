@@ -1,0 +1,979 @@
+{
+  "active": true,
+  "extraAttributes": {
+    "additionalProp1": {},
+    "additionalProp2": {},
+    "additionalProp3": {}
+  },
+  "features": [
+    {
+      "alternativeSequence": {
+        "originalSequence": "string",
+        "alternativeSequences": [
+          "string"
+        ]
+      },
+      "ligandPart": {
+        "name": "string",
+        "id": "string",
+        "note": "string",
+        "label": "string"
+      },
+      "featureId": "string",
+      "ligand": {
+        "name": "string",
+        "id": "string",
+        "note": "string",
+        "label": "string"
+      },
+      "location": {
+        "start": {
+          "value": 0,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 0,
+          "modifier": "EXACT"
+        },
+        "sequence": "string"
+      },
+      "type": "Initiator methionine",
+      "featureCrossReferences": [
+        {
+          "properties": [
+            {
+              "key": "string",
+              "value": "string"
+            }
+          ],
+          "id": "string",
+          "database": "dbSNP"
+        }
+      ],
+      "description": "string",
+      "evidences": [
+        {
+          "evidenceCode": "string",
+          "id": "string",
+          "source": "string"
+        }
+      ]
+    }
+  ],
+  "secondaryAccessions": [
+    "string"
+  ],
+  "proteinDescription": {
+    "alternativeNames": [
+      {
+        "shortNames": [
+          {
+            "value": "string",
+            "evidence": [
+              0
+            ]
+          }
+        ],
+        "fullName": {
+          "value": "string",
+          "evidence": [
+            0
+          ]
+        },
+        "valid": true,
+        "ecNumbers": [
+          {
+            "valid": true,
+            "value": "string",
+            "evidences": [
+              {
+                "evidenceCode": "string",
+                "id": "string",
+                "source": "string"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "recommendedName": {
+      "shortNames": [
+        {
+          "value": "string",
+          "evidence": [
+            0
+          ]
+        }
+      ],
+      "fullName": {
+        "value": "string",
+        "evidence": [
+          0
+        ]
+      },
+      "valid": true,
+      "ecNumbers": [
+        {
+          "valid": true,
+          "value": "string",
+          "evidences": [
+            {
+              "evidenceCode": "string",
+              "id": "string",
+              "source": "string"
+            }
+          ]
+        }
+      ]
+    },
+    "submissionNames": [
+      {
+        "fullName": {
+          "value": "string",
+          "evidence": [
+            0
+          ]
+        },
+        "valid": true,
+        "ecNumbers": [
+          {
+            "valid": true,
+            "value": "string",
+            "evidences": [
+              {
+                "evidenceCode": "string",
+                "id": "string",
+                "source": "string"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "includes": [
+      {
+        "alternativeNames": [
+          {
+            "shortNames": [
+              {
+                "value": "string",
+                "evidence": [
+                  0
+                ]
+              }
+            ],
+            "fullName": {
+              "value": "string",
+              "evidence": [
+                0
+              ]
+            },
+            "valid": true,
+            "ecNumbers": [
+              {
+                "valid": true,
+                "value": "string",
+                "evidences": [
+                  {
+                    "evidenceCode": "string",
+                    "id": "string",
+                    "source": "string"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "recommendedName": {
+          "shortNames": [
+            {
+              "value": "string",
+              "evidence": [
+                0
+              ]
+            }
+          ],
+          "fullName": {
+            "value": "string",
+            "evidence": [
+              0
+            ]
+          },
+          "valid": true,
+          "ecNumbers": [
+            {
+              "valid": true,
+              "value": "string",
+              "evidences": [
+                {
+                  "evidenceCode": "string",
+                  "id": "string",
+                  "source": "string"
+                }
+              ]
+            }
+          ]
+        },
+        "allergenName": {
+          "value": "string",
+          "evidence": [
+            0
+          ]
+        },
+        "biotechName": {
+          "value": "string",
+          "evidence": [
+            0
+          ]
+        },
+        "cdAntigenNames": [
+          {
+            "value": "string",
+            "evidence": [
+              0
+            ]
+          }
+        ],
+        "innNames": [
+          {
+            "value": "string",
+            "evidence": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "allergenName": {
+      "value": "string",
+      "evidence": [
+        0
+      ]
+    },
+    "biotechName": {
+      "value": "string",
+      "evidence": [
+        0
+      ]
+    },
+    "cdAntigenNames": [
+      {
+        "value": "string",
+        "evidence": [
+          0
+        ]
+      }
+    ],
+    "innNames": [
+      {
+        "value": "string",
+        "evidence": [
+          0
+        ]
+      }
+    ],
+    "contains": [
+      {
+        "alternativeNames": [
+          {
+            "shortNames": [
+              {
+                "value": "string",
+                "evidence": [
+                  0
+                ]
+              }
+            ],
+            "fullName": {
+              "value": "string",
+              "evidence": [
+                0
+              ]
+            },
+            "valid": true,
+            "ecNumbers": [
+              {
+                "valid": true,
+                "value": "string",
+                "evidences": [
+                  {
+                    "evidenceCode": "string",
+                    "id": "string",
+                    "source": "string"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "recommendedName": {
+          "shortNames": [
+            {
+              "value": "string",
+              "evidence": [
+                0
+              ]
+            }
+          ],
+          "fullName": {
+            "value": "string",
+            "evidence": [
+              0
+            ]
+          },
+          "valid": true,
+          "ecNumbers": [
+            {
+              "valid": true,
+              "value": "string",
+              "evidences": [
+                {
+                  "evidenceCode": "string",
+                  "id": "string",
+                  "source": "string"
+                }
+              ]
+            }
+          ]
+        },
+        "allergenName": {
+          "value": "string",
+          "evidence": [
+            0
+          ]
+        },
+        "biotechName": {
+          "value": "string",
+          "evidence": [
+            0
+          ]
+        },
+        "cdAntigenNames": [
+          {
+            "value": "string",
+            "evidence": [
+              0
+            ]
+          }
+        ],
+        "innNames": [
+          {
+            "value": "string",
+            "evidence": [
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "flag": "string"
+  },
+  "uniProtKBCrossReferences": [
+    {
+      "isoformId": "string",
+      "properties": [
+        {
+          "key": "string",
+          "value": "string"
+        }
+      ],
+      "id": "string",
+      "database": "string",
+      "evidences": [
+        {
+          "evidenceCode": "string",
+          "id": "string",
+          "source": "string"
+        }
+      ]
+    }
+  ],
+  "organismHosts": [
+    {
+      "taxonId": 0,
+      "commonName": "string",
+      "synonyms": [
+        "string"
+      ],
+      "scientificName": "string"
+    }
+  ],
+  "genes": [
+    {
+      "orderedLocusNames": [
+        {
+          "value": "string",
+          "evidences": [
+            {
+              "evidenceCode": "string",
+              "id": "string",
+              "source": "string"
+            }
+          ]
+        }
+      ],
+      "geneName": {
+        "value": "string",
+        "evidences": [
+          {
+            "evidenceCode": "string",
+            "id": "string",
+            "source": "string"
+          }
+        ]
+      },
+      "orfNames": [
+        {
+          "value": "string",
+          "evidences": [
+            {
+              "evidenceCode": "string",
+              "id": "string",
+              "source": "string"
+            }
+          ]
+        }
+      ],
+      "synonyms": [
+        {
+          "value": "string",
+          "evidences": [
+            {
+              "evidenceCode": "string",
+              "id": "string",
+              "source": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "events": [
+        "Alternative promoter usage"
+      ],
+      "isoforms": [
+        {
+          "name": {
+            "value": "string",
+            "evidences": [
+              {
+                "evidenceCode": "string",
+                "id": "string",
+                "source": "string"
+              }
+            ]
+          },
+          "isoformSequenceStatus": "Displayed",
+          "isoformIds": [
+            "string"
+          ],
+          "sequenceIds": [
+            "string"
+          ],
+          "synonyms": [
+            {
+              "value": "string",
+              "evidences": [
+                {
+                  "evidenceCode": "string",
+                  "id": "string",
+                  "source": "string"
+                }
+              ]
+            }
+          ],
+          "note": {
+            "valid": true,
+            "texts": [
+              {
+                "value": "string",
+                "evidences": [
+                  {
+                    "evidenceCode": "string",
+                    "id": "string",
+                    "source": "string"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "note": "string",
+      "kineticParameters": {
+        "maximumVelocities": [
+          {
+            "unit": "string",
+            "velocity": 0,
+            "enzyme": "string",
+            "evidences": [
+              {
+                "evidenceCode": "string",
+                "id": "string",
+                "source": "string"
+              }
+            ]
+          }
+        ],
+        "michaelisConstants": [
+          {
+            "constant": 0,
+            "unit": "M",
+            "substrate": "string",
+            "evidences": [
+              {
+                "evidenceCode": "string",
+                "id": "string",
+                "source": "string"
+              }
+            ]
+          }
+        ],
+        "note": {
+          "valid": true,
+          "texts": [
+            {
+              "value": "string",
+              "evidences": [
+                {
+                  "evidenceCode": "string",
+                  "id": "string",
+                  "source": "string"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "temperatureDependence": {
+        "texts": [
+          {
+            "value": "string",
+            "evidences": [
+              {
+                "evidenceCode": "string",
+                "id": "string",
+                "source": "string"
+              }
+            ]
+          }
+        ]
+      },
+      "absorption": {
+        "max": 0,
+        "approximate": true,
+        "note": {
+          "valid": true,
+          "texts": [
+            {
+              "value": "string",
+              "evidences": [
+                {
+                  "evidenceCode": "string",
+                  "id": "string",
+                  "source": "string"
+                }
+              ]
+            }
+          ]
+        },
+        "evidences": [
+          {
+            "evidenceCode": "string",
+            "id": "string",
+            "source": "string"
+          }
+        ]
+      },
+      "phDependence": {
+        "texts": [
+          {
+            "value": "string",
+            "evidences": [
+              {
+                "evidenceCode": "string",
+                "id": "string",
+                "source": "string"
+              }
+            ]
+          }
+        ]
+      },
+      "redoxPotential": {
+        "texts": [
+          {
+            "value": "string",
+            "evidences": [
+              {
+                "evidenceCode": "string",
+                "id": "string",
+                "source": "string"
+              }
+            ]
+          }
+        ]
+      },
+      "molecule": "string",
+      "physiologicalReactions": [
+        {
+          "reactionCrossReference": {
+            "properties": [
+              {
+                "key": "string",
+                "value": "string"
+              }
+            ],
+            "id": "string",
+            "database": "ChEBI"
+          },
+          "directionType": "left-to-right",
+          "evidences": [
+            {
+              "evidenceCode": "string",
+              "id": "string",
+              "source": "string"
+            }
+          ]
+        }
+      ],
+      "reaction": {
+        "name": "string",
+        "reactionCrossReferences": [
+          {
+            "properties": [
+              {
+                "key": "string",
+                "value": "string"
+              }
+            ],
+            "id": "string",
+            "database": "ChEBI"
+          }
+        ],
+        "ecNumber": "string",
+        "evidences": [
+          {
+            "evidenceCode": "string",
+            "id": "string",
+            "source": "string"
+          }
+        ]
+      },
+      "valid": true,
+      "cofactors": [
+        {
+          "name": "string",
+          "cofactorCrossReference": {
+            "properties": [
+              {
+                "key": "string",
+                "value": "string"
+              }
+            ],
+            "id": "string",
+            "database": "ChEBI"
+          },
+          "evidences": [
+            {
+              "evidenceCode": "string",
+              "id": "string",
+              "source": "string"
+            }
+          ]
+        }
+      ],
+      "disease": {
+        "diseaseId": "string",
+        "acronym": "string",
+        "diseaseAccession": "string",
+        "diseaseCrossReference": {
+          "properties": [
+            {
+              "key": "string",
+              "value": "string"
+            }
+          ],
+          "id": "string",
+          "database": "MIM"
+        },
+        "description": "string",
+        "evidences": [
+          {
+            "evidenceCode": "string",
+            "id": "string",
+            "source": "string"
+          }
+        ]
+      },
+      "texts": [
+        {
+          "value": "string",
+          "evidences": [
+            {
+              "evidenceCode": "string",
+              "id": "string",
+              "source": "string"
+            }
+          ]
+        }
+      ],
+      "interactions": [
+        {
+          "interactantOne": {
+            "chainId": "string",
+            "intActId": "string",
+            "geneName": "string",
+            "uniProtKBAccession": "string"
+          },
+          "organismDiffer": true,
+          "numberOfExperiments": 0,
+          "interactantTwo": {
+            "chainId": "string",
+            "intActId": "string",
+            "geneName": "string",
+            "uniProtKBAccession": "string"
+          }
+        }
+      ],
+      "method": "Electrospray",
+      "molWeightError": 0,
+      "molWeight": 0,
+      "evidences": [
+        {
+          "evidenceCode": "string",
+          "id": "string",
+          "source": "string"
+        }
+      ],
+      "locationType": "Not_applicable",
+      "positions": [
+        {
+          "position": "string",
+          "evidences": [
+            {
+              "evidenceCode": "string",
+              "id": "string",
+              "source": "string"
+            }
+          ]
+        }
+      ],
+      "sequenceCautionType": "Frameshift",
+      "sequence": "string",
+      "subcellularLocations": [
+        {
+          "location": {
+            "id": "string",
+            "value": "string",
+            "evidences": [
+              {
+                "evidenceCode": "string",
+                "id": "string",
+                "source": "string"
+              }
+            ]
+          },
+          "orientation": {
+            "id": "string",
+            "value": "string",
+            "evidences": [
+              {
+                "evidenceCode": "string",
+                "id": "string",
+                "source": "string"
+              }
+            ]
+          },
+          "topology": {
+            "id": "string",
+            "value": "string",
+            "evidences": [
+              {
+                "evidenceCode": "string",
+                "id": "string",
+                "source": "string"
+              }
+            ]
+          }
+        }
+      ],
+      "resourceUrl": "string",
+      "ftp": true,
+      "resourceName": "string",
+      "commentType": "FUNCTION"
+    }
+  ],
+  "geneLocations": [
+    {
+      "geneEncodingType": "unknown",
+      "value": "string",
+      "evidences": [
+        {
+          "evidenceCode": "string",
+          "id": "string",
+          "source": "string"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "category": "Biological process",
+      "name": "string",
+      "id": "string",
+      "evidences": [
+        {
+          "evidenceCode": "string",
+          "id": "string",
+          "source": "string"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "type": "string",
+    "ref": "string"
+  },
+  "internalSection": {
+    "internalLines": [
+      {
+        "type": "CL",
+        "value": "string"
+      }
+    ],
+    "sourceLines": [
+      {
+        "value": "string"
+      }
+    ],
+    "evidenceLines": [
+      {
+        "evidence": "string",
+        "createDate": "2025-11-12",
+        "curator": "string"
+      }
+    ]
+  },
+  "fragment": true,
+  "annotationScore": 0,
+  "entryAudit": {
+    "firstPublicDate": "2025-11-12",
+    "sequenceVersion": 0,
+    "lastAnnotationUpdateDate": "2025-11-12",
+    "lastSequenceUpdateDate": "2025-11-12",
+    "entryVersion": 0
+  },
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "proteinExistence": "1: Evidence at protein level",
+  "uniProtkbId": "string",
+  "organism": {
+    "taxonId": 0,
+    "lineages": [
+      "string"
+    ],
+    "commonName": "string",
+    "synonyms": [
+      "string"
+    ],
+    "scientificName": "string",
+    "evidences": [
+      {
+        "evidenceCode": "string",
+        "id": "string",
+        "source": "string"
+      }
+    ]
+  },
+  "lineages": [
+    {
+      "hidden": true,
+      "rank": "strain",
+      "taxonId": 0,
+      "commonName": "string",
+      "synonyms": [
+        "string"
+      ],
+      "scientificName": "string"
+    }
+  ],
+  "primaryAccession": "string",
+  "inactiveReason": {
+    "deletedReason": "",
+    "inactiveReasonType": "DELETED",
+    "mergeDemergeTos": [
+      "string"
+    ]
+  },
+  "references": [
+    {
+      "referencePositions": [
+        "string"
+      ],
+      "referenceNumber": 0,
+      "referenceComments": [
+        {
+          "type": "STRAIN",
+          "value": "string",
+          "evidences": [
+            {
+              "evidenceCode": "string",
+              "id": "string",
+              "source": "string"
+            }
+          ]
+        }
+      ],
+      "citation": {
+        "address": "string",
+        "editors": [
+          "string"
+        ],
+        "firstPage": "string",
+        "lastPage": "string",
+        "volume": "string",
+        "bookName": "string",
+        "publisher": "string",
+        "id": "string",
+        "citationCrossReferences": [
+          {
+            "properties": [
+              {
+                "key": "string",
+                "value": "string"
+              }
+            ],
+            "id": "string",
+            "database": "PubMed"
+          }
+        ],
+        "publicationDate": "string",
+        "authoringGroups": [
+          "string"
+        ],
+        "authors": [
+          "string"
+        ],
+        "title": "string",
+        "journal": "string",
+        "locator": "string",
+        "literatureAbstract": "string",
+        "completeAuthorList": true,
+        "pubmedId": 0,
+        "doiId": "string",
+        "patentNumber": "string",
+        "submissionDatabase": "PDB data bank",
+        "institute": "string",
+        "citationType": "journal article"
+      },
+      "evidences": [
+        {
+          "evidenceCode": "string",
+          "id": "string",
+          "source": "string"
+        }
+      ]
+    }
+  ]
+}
