@@ -43,6 +43,7 @@ export async function POST(request: NextRequest) {
         rawUniProtData = await response.json();
         proteinSequence = rawUniProtData.sequence?.value;
         sequenceId = rawUniProtData.primaryAccession || uniprotId;
+        console.log(proteinSequence)
       } catch (error) {
         return NextResponse.json(
           {
