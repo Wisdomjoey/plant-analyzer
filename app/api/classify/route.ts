@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     let rawUniProtData = null;
 
     // Fetch and parse full UniProt response when ID provided
-    if (uniprotId && !sequence) {
+    if (uniprotId) {
       try {
         const response = await fetch(
           `https://rest.uniprot.org/uniprotkb/${uniprotId}`
@@ -43,7 +43,6 @@ export async function POST(request: NextRequest) {
         rawUniProtData = await response.json();
         proteinSequence = rawUniProtData.sequence?.value;
         sequenceId = rawUniProtData.primaryAccession || uniprotId;
-        console.log(proteinSequence)
       } catch (error) {
         return NextResponse.json(
           {
